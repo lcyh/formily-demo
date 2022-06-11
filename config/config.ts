@@ -73,4 +73,13 @@ export default defineConfig({
   mfsu: {},
   webpack5: {},
   exportStatic: {},
+  //按需打包 antd 和  @formily/antd
+  extraBabelPlugins: [
+    ['babel-plugin-import', { libraryName: 'antd', libraryDirectory: 'es', style: true }, 'antd'],
+    [
+      'babel-plugin-import',
+      { libraryName: '@formily/antd', libraryDirectory: 'esm', style: true },
+      '@formily/antd',
+    ],
+  ],
 });
